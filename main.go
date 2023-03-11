@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 )
 
@@ -18,15 +17,13 @@ func main() {
 
 	fmt.Println(strings.Repeat("=", 20))
 
-	arrayUnicode := []string{"U+0421", "U+0410", "U+0428", "U+0410", "U+0420", "U+0412", "U+041E"}
+	charUnicode := "САШАРВО"
 
 	j := 0
 	for j <= 10 {
 		if j == 5 {
-			for i, v := range arrayUnicode {
-				position := i * 2
-				value, _ := strconv.ParseInt(v[2:], 16, 16)
-				fmt.Printf("character %#U starts at byte position %d \n", value, position)
+			for i, v := range charUnicode {
+				fmt.Printf("character %#U starts at byte position %d\n", v, i)
 			}
 		} else {
 			fmt.Printf("Nilai j = %d \n", j)
